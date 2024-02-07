@@ -1,0 +1,551 @@
+body {
+  background-color: #26262c;
+  padding: 0;
+  margin: 0;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+body .container {
+  width: 100%;
+}
+body .container .wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+body .container .wrapper .main_title_container {
+  text-align: center;
+}
+body .container .wrapper .container_subtitle {
+  text-align: center;
+}
+body .container .wrapper .projects_box {
+  width: 100%;
+}
+body .container .wrapper .projects_box .projects_figure_calc {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .title_box .project_square_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .calc_box {
+  width: 250px;
+  height: 250px;
+  background-color: #5bc15b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .calc_box .calc {
+  width: 220px;
+  height: 220px;
+  background-color: #c5cec5;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .calc_box .calc .show_area {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .calc_box .calc .show_perimetr {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .square_box .calc_box .calc .btn_square {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .title_box .project_rectangle_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .calc_box {
+  width: 350px;
+  height: 250px;
+  background-color: #c15bc1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .calc_box .calc {
+  width: 320px;
+  height: 220px;
+  background-color: #c5cec5;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .calc_box .calc .show_area {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .calc_box .calc .show_perimetr {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .rectangle_box .calc_box .calc .btn_rectangle {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .title_box .project_circle_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .calc_box {
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  background-color: #bce439;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .calc_box .calc {
+  width: 220px;
+  height: 220px;
+  background-color: #c5cec5;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .calc_box .calc .show_area {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .calc_box .calc .show_circumference {
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .circle_box .calc_box .calc .btn_circle {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box .title_box .project_triangle_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box .calc_box {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 260px solid #389fc7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box .calc_box .inner_calc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 35%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box .calc_box .inner_calc .show_area {
+  text-align: center;
+  color: #65656d;
+}
+body .container .wrapper .projects_box .projects_figure_calc .triangle_box .calc_box .inner_calc .btn_triangle {
+  margin-top: 10px;
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .title_box .project_quadratic_equation_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc {
+  width: 400px;
+  height: 400px;
+  background-color: #7f5bc1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .title_quadratic_box {
+  width: 100%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .title_quadratic_box .title_quadratic {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box .root_elem {
+  width: 100%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box .root_elem .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box .root_elem .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box .root_elem .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .quadratic_equation_box .quadratic_equation_calc .calc .root_elem_box .root_elem .elem3 {
+  text-align: center;
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .title_box .project_pythagorean_triple_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(2, 152, 212, 0.402);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .inp_box p {
+  margin: 0;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .title_pythagorean_triple_box {
+  width: 80%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .title_pythagorean_triple_box .title_pythagorean_triple {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box .root_elem {
+  width: 80%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box .root_elem .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box .root_elem .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box .root_elem .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .pythagorean_triple_box .pythagorean_triple_calc .calc .root_elem_box .root_elem .elem3 {
+  text-align: center;
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .title_box .project_number_divisors_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(212, 177, 2, 0.767);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .inp_box p {
+  margin: 0;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .title_number_divisors_box {
+  width: 80%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .title_number_divisors_box .title_number_divisors {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box .root_elem {
+  width: 80%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box .root_elem .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box .root_elem .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box .root_elem .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .number_divisors_box .number_divisors_calc .calc .root_elem_box .root_elem .elem3 {
+  text-align: center;
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .title_box .project_common_factors_nums_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(2, 212, 212, 0.767);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .inp_box p {
+  margin: 0;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .title_common_factors_nums_box {
+  width: 80%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .title_common_factors_nums_box .title_common_factors_nums {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem {
+  width: 80%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem .result_block1 {
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem .result_block1 .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem .result_block1 .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem .result_block1 .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .common_factors_nums_box .common_factors_nums_calc .calc .root_elem_box .root_elem .result_block1 .elem3 {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .title_box .project_two_nums_NOD_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(212, 2, 37, 0.767);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .inp_box p {
+  margin: 0;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .title_two_nums_NOD_box {
+  width: 80%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .title_two_nums_NOD_box .title_two_nums_NOD {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem {
+  width: 80%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem .result_block1 {
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem .result_block1 .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem .result_block1 .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem .result_block1 .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOD_box .two_nums_NOD_calc .calc .root_elem_box .root_elem .result_block1 .elem3 {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  margin: 0;
+}

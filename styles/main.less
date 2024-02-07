@@ -1,0 +1,647 @@
+body {
+    background-color: #26262c;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    
+    .container {
+        width: 100%;
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+
+            .main_title_container {
+                text-align: center;
+            }
+            .container_subtitle {
+                text-align: center;
+            }
+
+            .projects_box {
+                width: 100%;
+
+                .projects_figure_calc {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    margin-bottom: 40px;
+                       
+                    .square_box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        .title_box {
+                            .project_square_title {
+                                font-size: 20px;
+                                color:dodgerblue;
+                            }
+                        }
+                        .calc_box {
+                            width: 250px;
+                            height: 250px;
+                            background-color: rgb(91, 193, 91);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .calc {
+                                width: 220px;
+                                height: 220px;
+                                background-color: rgb(197, 206, 197);
+                                border-radius: 4px;
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                align-items: center;
+
+                                .show_area {
+                                    color: #65656d;
+                                }
+                                .show_perimetr {
+                                    color: #65656d;
+                                }
+                                .btn_square {
+                                    color: rgb(77, 168, 77);
+                                }
+                            }
+                        }
+                    }
+
+                    .rectangle_box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        .title_box {
+                            .project_rectangle_title {
+                                font-size: 20px;
+                                color:dodgerblue;
+                            }
+                        }
+                        .calc_box {
+                            width: 350px;
+                            height: 250px;
+                            background-color: rgb(193, 91, 193);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .calc {
+                                width: 320px;
+                                height: 220px;
+                                background-color: rgb(197, 206, 197);
+                                border-radius: 4px;
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                align-items: center;
+
+                                .show_area {
+                                    color: #65656d;
+                                }
+                                .show_perimetr {
+                                    color: #65656d;
+                                }
+                                .btn_rectangle {
+                                    color: rgb(77, 168, 77);
+                                }
+                            }
+                        }
+                    }
+
+                    .circle_box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        .title_box {
+                            .project_circle_title {
+                                font-size: 20px;
+                                color:dodgerblue;
+                            }
+                        }
+                        .calc_box {
+                            border-radius: 100%;
+                            width: 250px;
+                            height: 250px;
+                            background-color: rgb(188, 228, 57);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .calc {
+                                width: 220px;
+                                height: 220px;
+                                background-color: rgb(197, 206, 197);
+                                border-radius: 100%;
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+                                align-items: center;
+
+                                .show_area {
+                                    color: #65656d;
+                                }
+                                .show_circumference {
+                                    color: #65656d;
+                                }
+                                .btn_circle {
+                                    color: rgb(77, 168, 77);
+                                }
+                            }
+                        }
+                    }
+
+                    .triangle_box {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        .title_box {
+                            .project_triangle_title {
+                                font-size: 20px;
+                                color:dodgerblue;
+                            }
+                        }
+                        .calc_box {
+                            position: relative;
+                            width: 0;
+                            height: 0;
+                            border-left: 200px solid transparent;
+                            border-right: 200px solid transparent;
+                            border-bottom: 260px solid rgb(56, 159, 199);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .inner_calc {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, 35%);
+                                
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                width: 100%;
+                                text-align: center;
+                        
+                                .show_area {
+                                    text-align: center;
+                                    color: #65656d;
+                                }         
+                                .btn_triangle {
+                                    margin-top: 10px;
+                                    color: rgb(77, 168, 77);
+                                }
+                            }
+                        }         
+                    }
+                }
+
+                .projects_math_calc {
+                    width: 100%;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                    
+                    .projects_math {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                        
+                        .quadratic_equation_box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .title_box {
+                                .project_quadratic_equation_title {
+                                    font-size: 20px;
+                                    color:dodgerblue;
+                                }
+                            }
+                            .quadratic_equation_calc {
+                                width: 400px;
+                                height: 400px;
+                                background-color: rgb(127, 91, 193);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .calc {
+                                    width: 360px;
+                                    height: 360px;
+                                    background-color: rgb(186, 188, 186);
+                                    border-radius: 4px;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    
+                                    .inp_box {
+                                        margin: 0;
+                                    }
+
+                                    .title_quadratic_box {
+                                        width: 100%;
+                                        display: flex;
+                                        
+                                        .title_quadratic {
+                                            color: #65656d;
+                                            font-size: 18px;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    .root_elem_box {
+                                        color: #65656d;
+                                        font-size: 18px;
+                                    }
+                                    .btn_enter {
+                                        color: rgb(77, 168, 77);
+                                    }
+                                    .btn_clear {
+                                        color: rgb(216, 80, 57);
+                                    }
+                                    .root_elem_box {
+                                        margin: 0;
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .root_elem {
+                                            width: 100%;
+
+                                            .block_title_result {
+                                                display: flex;
+                                                justify-content: center;
+                                            }
+                                            .elem1, .elem2, .elem3 {
+                                                text-align: center;
+                                                margin: 0;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        } 
+                        
+                        .pythagorean_triple_box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .title_box {
+                                .project_pythagorean_triple_title {
+                                    font-size: 20px;
+                                    color:dodgerblue;
+                                }
+                            }
+                            .pythagorean_triple_calc {
+                                width: 400px;
+                                height: 400px;
+                                background-color: rgba(2, 152, 212, 0.402);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .calc {
+                                    width: 360px;
+                                    height: 360px;
+                                    background-color: rgb(186, 188, 186);
+                                    border-radius: 4px;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    
+                                    .inp_box {
+                                        margin: 0;
+
+                                        p {
+                                            margin: 0;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .title_pythagorean_triple_box {
+                                        width: 80%;
+                                        display: flex;
+                                        
+                                        .title_pythagorean_triple {
+                                            color: #65656d;
+                                            font-size: 18px;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    .root_elem_box {
+                                        color: #65656d;
+                                        font-size: 18px;
+                                    }
+                                    .btn_enter {
+                                        color: rgb(77, 168, 77);
+                                    }
+                                    .btn_clear {
+                                        color: rgb(216, 80, 57);
+                                    }
+                                    .root_elem_box {
+                                        margin: 0;
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .root_elem {
+                                            width: 80%;
+
+                                            .block_title_result {
+                                                display: flex;
+                                                justify-content: center;
+                                            }
+                                            .elem1, .elem2, .elem3 {
+                                                text-align: center;
+                                                margin: 0;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        } 
+
+                        .number_divisors_box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .title_box {
+                                .project_number_divisors_title {
+                                    font-size: 20px;
+                                    color:dodgerblue;
+                                }
+                            }
+                            .number_divisors_calc {
+                                width: 400px;
+                                height: 400px;
+                                background-color: rgba(212, 177, 2, 0.767);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .calc {
+                                    width: 360px;
+                                    height: 360px;
+                                    background-color: rgb(186, 188, 186);
+                                    border-radius: 4px;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    
+                                    .inp_box {
+                                        margin: 0;
+
+                                        p {
+                                            margin: 0;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .title_number_divisors_box {
+                                        width: 80%;
+                                        display: flex;
+                                        
+                                        .title_number_divisors {
+                                            color: #65656d;
+                                            font-size: 18px;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    .root_elem_box {
+                                        color: #65656d;
+                                        font-size: 18px;
+                                    }
+                                    .btn_enter {
+                                        color: rgb(77, 168, 77);
+                                    }
+                                    .btn_clear {
+                                        color: rgb(216, 80, 57);
+                                    }
+                                    .root_elem_box {
+                                        margin: 0;
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .root_elem {
+                                            width: 80%;
+
+                                            .block_title_result {
+                                                display: flex;
+                                                justify-content: center;
+                                            }
+                                            .elem1, .elem2, .elem3 {
+                                                text-align: center;
+                                                margin: 0;
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        } 
+
+                        .common_factors_nums_box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .title_box {
+                                .project_common_factors_nums_title {
+                                    font-size: 20px;
+                                    color:dodgerblue;
+                                }
+                            }
+                            .common_factors_nums_calc {
+                                width: 400px;
+                                height: 400px;
+                                background-color: rgba(2, 212, 212, 0.767);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .calc {
+                                    width: 360px;
+                                    height: 360px;
+                                    background-color: rgb(186, 188, 186);
+                                    border-radius: 4px;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    
+                                    .inp_box {
+                                        margin: 0;
+
+                                        p {
+                                            margin: 0;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .title_common_factors_nums_box {
+                                        width: 80%;
+                                        display: flex;
+                                        
+                                        .title_common_factors_nums {
+                                            color: #65656d;
+                                            font-size: 18px;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    .root_elem_box {
+                                        color: #65656d;
+                                        font-size: 18px;
+                                    }
+                                    .btn_enter {
+                                        color: rgb(77, 168, 77);
+                                    }
+                                    .btn_clear {
+                                        color: rgb(216, 80, 57);
+                                    }
+                                    .root_elem_box {
+                                        margin: 0;
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .root_elem {
+                                            width: 80%;
+                                            .result_block1 {
+                                                display: flex;
+
+                                                .block_title_result {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                }
+                                                .elem1, .elem2, .elem3 {
+                                                    display: flex;
+                                                    align-items: flex-end;
+                                                    text-align: center;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        } 
+
+                        .two_nums_NOD_box {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .title_box {
+                                .project_two_nums_NOD_title {
+                                    font-size: 20px;
+                                    color:dodgerblue;
+                                }
+                            }
+                            .two_nums_NOD_calc {
+                                width: 400px;
+                                height: 400px;
+                                background-color: rgba(212, 2, 37, 0.767);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .calc {
+                                    width: 360px;
+                                    height: 360px;
+                                    background-color: rgb(186, 188, 186);
+                                    border-radius: 4px;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+                                    align-items: center;
+                                    
+                                    .inp_box {
+                                        margin: 0;
+
+                                        p {
+                                            margin: 0;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .title_two_nums_NOD_box {
+                                        width: 80%;
+                                        display: flex;
+                                        
+                                        .title_two_nums_NOD {
+                                            color: #65656d;
+                                            font-size: 18px;
+                                            text-align: center;
+                                        }
+                                    }
+                                    
+                                    .root_elem_box {
+                                        color: #65656d;
+                                        font-size: 18px;
+                                    }
+                                    .btn_enter {
+                                        color: rgb(77, 168, 77);
+                                    }
+                                    .btn_clear {
+                                        color: rgb(216, 80, 57);
+                                    }
+                                    .root_elem_box {
+                                        margin: 0;
+                                        display: flex;
+                                        justify-content: center;
+
+                                        .root_elem {
+                                            width: 80%;
+                                            .result_block1 {
+                                                display: flex;
+
+                                                .block_title_result {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                }
+                                                .elem1, .elem2, .elem3 {
+                                                    display: flex;
+                                                    align-items: flex-end;
+                                                    text-align: center;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                        } 
+
+
+                    }
+                }
+        
+            }
+        }
+    }
+
+}
