@@ -418,28 +418,30 @@ const twoNumsNOD = (function() {
         let btnEnter = container.querySelector('.btn_enter');
         let btnClear = container.querySelector('.btn_clear');
         let resValue = container.querySelector('.result_value');
+        let elem = container.querySelector('.elem');
         
-        function getSum(sum) {
-            let arrNums = []
+        function getSumA(num) {
+            return Array.from({length: num}, (_, i) => i + 1).filter(n => num % n === 0)
+        }
 
-            for (let i = 1; i <= sum; i++) {
-                if (sum % i === 0) {
-                    arrNums.push(i)
-                }
-            }
+        function getArrOfNums(num1, num2) {            
+            return getSumA(num1).filter(n => num1 % n === 0 && num2 % n === 0) 
+        }
 
-            return arrNums
+        function getNodOfNums(num1, num2) {
+            let commonDivisires = getArrOfNums(num1, num2).filter(n => num1 % n === 0 && num2 % n === 0)
+            return Math.max.apply(null, commonDivisires)
         }
 
         function handleEnterClick() {  
-            resValue.innerText += ` ${inputA.value}:`
-            elem.textContent = `${getSum(inputA.value)}`
+            resValue.innerText = ` ${getNodOfNums(inputA.value, inputB.value)}`
         }
         
         function handleClearClick() {
             inputA.value = ''
+            inputB.value = ''
             resValue.innerText = ''
-            elem.textContent = ''
+            elem.innerText = ''
         }
 
         btnEnter.addEventListener('click', handleEnterClick);
@@ -453,3 +455,59 @@ const twoNumsNOD = (function() {
 
 
 twoNumsNOD.init('.two_nums_NOD_box')
+
+
+//Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку
+// выведите наименьшее число, которое делится и на одно, и на второе из введенных чисел.
+const twoNumsNOK = (function() {
+
+    function init(containerSelector) {
+        let container = document.querySelector(containerSelector)
+        let inputA = container.querySelector('.inp1');
+        let inputB = container.querySelector('.inp2');
+        let btnEnter = container.querySelector('.btn_enter');
+        let btnClear = container.querySelector('.btn_clear');
+        let resValue = container.querySelector('.result_value');
+        let elem = container.querySelector('.elem');
+        
+        function getSumA(num) {
+            return Array.from({length: num}, (_, i) => i + 1).filter(n => num % n === 0)
+        }
+
+        function getArrOfNums(num1, num2) {            
+            return getSumA(num1).filter(n => num1 % n === 0 && num2 % n === 0) 
+        }
+
+        function getNodOfNums(num1, num2) {
+            let commonDivisores = getArrOfNums(num1, num2).filter(n => num1 % n === 0 && num2 % n === 0)
+            return Math.max.apply(null, commonDivisores)
+        }
+
+        function getNoKOfNums(numA, numB) {
+            let commonMultiple = numA * numB 
+            return commonMultiple
+        }
+
+        function handleEnterClick() {  
+            resValue.innerText = ` ${getNoKOfNums(inputA.value, inputB.value) / getNodOfNums(inputA.value, inputB.value)}`
+            console.log(getNoKOfNums(inputA.value, inputB.value))
+        }
+        
+        function handleClearClick() {
+            inputA.value = ''
+            inputB.value = ''
+            resValue.innerText = ''
+            elem.innerText = ''
+        }
+
+        btnEnter.addEventListener('click', handleEnterClick);
+        btnClear.addEventListener('click', handleClearClick);
+    }
+   
+    return {
+        init
+    }
+})('.two_nums_NOK_box'); 
+
+
+twoNumsNOK.init('.two_nums_NOK_box')

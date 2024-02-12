@@ -549,3 +549,79 @@ body .container .wrapper .projects_box .projects_math_calc .projects_math .two_n
   text-align: center;
   margin: 0;
 }
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .title_box .project_two_nums_NOK_title {
+  font-size: 20px;
+  color: dodgerblue;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(149, 212, 2, 0.767);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc {
+  width: 360px;
+  height: 360px;
+  background-color: #babcba;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .inp_box {
+  margin: 0;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .inp_box p {
+  margin: 0;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .title_two_nums_NOK_box {
+  width: 80%;
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .title_two_nums_NOK_box .title_two_nums_NOK {
+  color: #65656d;
+  font-size: 18px;
+  text-align: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box {
+  color: #65656d;
+  font-size: 18px;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .btn_enter {
+  color: #4da84d;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .btn_clear {
+  color: #d85039;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem {
+  width: 80%;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem .result_block1 {
+  display: flex;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem .result_block1 .block_title_result {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem .result_block1 .elem1,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem .result_block1 .elem2,
+body .container .wrapper .projects_box .projects_math_calc .projects_math .two_nums_NOK_box .two_nums_NOK_calc .calc .root_elem_box .root_elem .result_block1 .elem3 {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  margin: 0;
+}
