@@ -490,7 +490,6 @@ const twoNumsNOK = (function() {
 
         function handleEnterClick() {  
             resValue.innerText = ` ${getNoKOfNums(inputA.value, inputB.value) / getNodOfNums(inputA.value, inputB.value)}`
-            console.log(getNoKOfNums(inputA.value, inputB.value))
         }
         
         function handleClearClick() {
