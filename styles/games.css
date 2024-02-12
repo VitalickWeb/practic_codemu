@@ -1,0 +1,26 @@
+body {
+  background-color: #26262c;
+  padding: 0;
+  margin: 0;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+body .container_games {
+  width: 100%;
+}
+body .container_games .wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+body .container_games .wrapper .main_title_container {
+  text-align: center;
+}
+body .container_games .wrapper .container_subtitle {
+  text-align: center;
+}
+body .container_games .wrapper .projects_box {
+  width: 100%;
+}
