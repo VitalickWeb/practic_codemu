@@ -625,3 +625,46 @@ body .container .wrapper .projects_box .projects_math_calc .projects_math .two_n
   text-align: center;
   margin: 0;
 }
+body .container .wrapper .footer_container {
+  margin-bottom: 40px;
+}
+body .container .wrapper .footer_container .link_box {
+  display: flex;
+  justify-content: center;
+}
+body .container .wrapper .footer_container .link_box a.link_pagination {
+  color: snow;
+  font-size: 18px;
+  padding: 6px 8px 6px 8px;
+  background-color: #56567d;
+  border: 1px solid #90909b;
+  border-radius: 3px;
+  transition: all 0.3s ease 0.3s;
+  text-decoration: none;
+}
+body .container .wrapper .footer_container .link_box a.link_pagination:hover span.next {
+  color: #ef4f3a;
+  padding-left: 6px;
+  /* Дополнительный отступ для стрелки */
+}
+body .container .wrapper .footer_container .link_box span.next {
+  transition: all 0.3s ease;
+}
+body .container .wrapper .footer_container .link_box a:active {
+  color: #ef4f3a;
+  font-size: 18px;
+  padding: 6px 6px 6px 6px;
+  background-color: #3b3b65;
+  border: 1px solid #90909b;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+body .container .wrapper .footer_container .link_box a:active span.next {
+  color: #ef4f3a;
+  padding-left: 0;
+  /* Дополнительный отступ для стрелки */
+}
+body .container .wrapper .footer_container .link_box span.next {
+  transition: all 0.3s ease;
+}
