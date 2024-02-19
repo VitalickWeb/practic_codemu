@@ -647,10 +647,7 @@ body .container .wrapper .footer_container .link_box a.link_pagination:hover spa
   padding-left: 6px;
   /* Дополнительный отступ для стрелки */
 }
-body .container .wrapper .footer_container .link_box span.next {
-  transition: all 0.3s ease;
-}
-body .container .wrapper .footer_container .link_box a:active {
+body .container .wrapper .footer_container .link_box a.link_pagination:active {
   color: #ef4f3a;
   font-size: 18px;
   padding: 6px 6px 6px 6px;
@@ -660,7 +657,7 @@ body .container .wrapper .footer_container .link_box a:active {
   transition: all 0.2s ease;
   text-decoration: none;
 }
-body .container .wrapper .footer_container .link_box a:active span.next {
+body .container .wrapper .footer_container .link_box a.link_pagination:active span.next {
   color: #ef4f3a;
   padding-left: 0;
   /* Дополнительный отступ для стрелки */

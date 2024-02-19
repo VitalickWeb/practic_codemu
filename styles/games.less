@@ -22,12 +22,214 @@ body {
                 text-align: center;
             }
 
-            .projects_box {
+            .project_games {
                 width: 100%;
+                display: flex;
+                justify-content: center;
 
+                .games_box {
+                    width: 40%;
+                    min-height: 450px;                
+                    background-color: #3b3b65; 
+                    border-radius: 2px;
+
+                    .description_game_box {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        
+                        p {
+                            margin: 0;
+                        }
+
+                        .description_game {
+                            width: 70%;
+                            text-align: center;
+                            padding-top: 20px;
+                            margin-bottom: 20px;                                                    
+                        }
+                    }
+
+                    .control_game_box {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center; 
+                        
+                        input.input_style {
+                            font-size: 18px;
+                            outline: none;
+                            width: 250px;
+                            height: 26px;
+                            padding: 0 5px;
+                            border-radius: 2px;
+                            box-sizing: border-box;
+                            border: 2px solid #ccc;
+                            transition: border-color 0.2s ease;
+                        }
+                        @keyframes inputFocus {
+                            0% {
+                                transform: scale(1);
+                            }
+                            50% {
+                                transform: scale(1.1);
+                            }
+                            100% {
+                                transform: scale(1);
+                            }
+                        }
+                          
+                        input:focus {
+                            border-color: #2fc75d; /* Цвет границы при фокусировке */
+                        }
+
+                        .button {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            background-color: #2fc75d;
+                            color: white;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 16px;
+                            border-radius: 5px;
+                            transition: all 0.2s ease;
+                            
+                            &:hover {
+                              background-color: #2fc75d;
+                              transition: all 0.2s ease;
+                            }
+                            &:active {
+                              background-color: #2fc75d ;
+                              color: rgb(196, 196, 196);
+                              transition: all 0.2s ease;
+                            }
+                            &.btn_enter {
+                                margin-top: 20px;
+                                position: relative;
+                                overflow: hidden;
+                            &:after {
+                                content: "";
+                                background: rgba(255, 255, 255, 0.5);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                width: 300%;
+                                height: 300%;
+                                border-radius: 50%;
+                                z-index: 0;
+                                transition: width 0.5s ease, height 0.5s ease;
+                                transform: translate(-50%, -50%);
+                            }
+                            &:hover:after {
+                                width: 0;
+                                height: 0;
+                            }
+                                span {
+                                    position: relative;
+                                    z-index: 1;
+                                }
+                            }
+                        }
+
+                        .button_clear {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            background-color: #e44e3a;
+                            color: white;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 16px;
+                            border-radius: 5px;
+                            transition: all 0.2s ease;
+                            
+                            &:hover {
+                              background-color: #e44e3a;
+                              transition: all 0.2s ease;
+                            }
+                            &:active {
+                              background-color: #e44e3a ;
+                              color: rgb(196, 196, 196);
+                              transition: all 0.2s ease;
+                            }
+                            &.btn_clear {
+                                margin-top: 20px;
+                                position: relative;
+                                overflow: hidden;
+                            &:after {
+                                content: "";
+                                background: rgba(255, 255, 255, 0.5);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                width: 300%;
+                                height: 300%;
+                                border-radius: 50%;
+                                z-index: 0;
+                                transition: width 0.5s ease, height 0.5s ease;
+                                transform: translate(-50%, -50%);
+                            }
+                            &:hover:after {
+                                width: 0;
+                                height: 0;
+                            }
+                                span {
+                                    position: relative;
+                                    z-index: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .show_result_guesse_box {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        .show_result_guesse_sub_box {   
+                            margin-top: 20px;                  
+                            width: 250px;
+                            height: 220px;
+                            border-radius: 3px;
+                            background-color: rgb(248, 248, 248);
+                            box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, 0.2);
+                        
+                            .show_result_guesse {
+                                width: 80%;
+                                margin: 0 auto;
+                                color: #90909b;
+                                padding-top: 40px;
+                                text-align: center;
+                                border-bottom: 1px solid #90909b;
+                                padding-bottom: 20px;
+                            }
+                            .entered_numbers_box {
+                                width: 80%;
+                                margin: 0 auto;
+
+                                .entered_numbers {
+                                    width: 80%;
+                                    margin: 0 auto;
+                                    color: #90909b;
+                                    padding-top: 20px;
+                                    text-align: center;
+                                }
+                                .show_entered_numbers {
+                                    font-size: 18px;
+                                    width: 80%;
+                                    margin: 0 auto;
+                                    color: #053ea8;
+                                    padding-top: 10px;
+                                    text-align: center;
+                                }
+                            }       
+                        }
+                    }
+                }
             }
 
             .footer_container {
+                padding-top: 40px;
                 margin-bottom: 40px;
 
                 .link_box {
@@ -44,36 +246,31 @@ body {
                         
                         transition: all 0.3s ease 0.3s;
                         text-decoration: none;
-                    }
-                    &:hover {
-                        
-                        span.next {
+
+                        &:hover {
+                            span.next {
+                                color: rgb(239, 79, 58);
+                                padding-left: 6px; /* Дополнительный отступ для стрелки */
+                            }
+                        }
+
+                        &:active {
                             color: rgb(239, 79, 58);
-                            padding-left: 6px; /* Дополнительный отступ для стрелки */
+                            font-size: 18px;
+                            padding: 6px 6px 6px 6px;
+                            background-color:#3b3b65;
+                            border: 1px solid #90909b;
+                            border-radius: 3px;
+    
+                            transition: all 0.2s ease;
+                            text-decoration: none;  
+                            
+                            span.next {
+                                color: rgb(239, 79, 58);
+                                padding-left: 0; /* Дополнительный отступ для стрелки */
+                            }
                         }
                     }
-
-                    span.next {
-                        transition: all 0.3s ease;
-                    }
-                    
-                    a:active {
-                        color: rgb(239, 79, 58);
-                        font-size: 18px;
-                        padding: 6px 6px 6px 6px;
-                        background-color:#3b3b65;
-                        border: 1px solid #90909b;
-                        border-radius: 3px;
-
-                        transition: all 0.2s ease;
-                        text-decoration: none;  
-                        
-                        span.next {
-                            color: rgb(239, 79, 58);
-                            padding-left: 0; /* Дополнительный отступ для стрелки */
-                        }
-                    }
-
                     span.next {
                         transition: all 0.3s ease;
                     }

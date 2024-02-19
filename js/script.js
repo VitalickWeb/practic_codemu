@@ -194,7 +194,6 @@ circleCalculator.init('.circle_box');
 triangleCalculator.init('.triangle_box')
 
 
-
 // ============================================================================ //
 // ================ Математические калькуляторы на JavaScript ================= //
 //Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения.
@@ -401,12 +400,6 @@ const commonFactorsOfNums = (function() {
 })('.common_factors_nums_box'); 
 
 
-quadraticEquation.init('.quadratic_equation_box')
-pythagoreanTriple.init('.pythagorean_triple_box')
-numberDivisors.init('.number_divisors_box')
-commonFactorsOfNums.init('.common_factors_nums_box')
-
-
 //Даны 2 инпута и кнопка. В инпуты вводятся числа. 
 //По нажатию на кнопку выведите наибольший общий делитель этих двух чисел.
 const twoNumsNOD = (function() {
@@ -452,9 +445,6 @@ const twoNumsNOD = (function() {
         init
     }
 })('.two_nums_NOD_box'); 
-
-
-twoNumsNOD.init('.two_nums_NOD_box')
 
 
 //Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку
@@ -508,5 +498,9 @@ const twoNumsNOK = (function() {
     }
 })('.two_nums_NOK_box'); 
 
-
+quadraticEquation.init('.quadratic_equation_box')
+pythagoreanTriple.init('.pythagorean_triple_box')
+numberDivisors.init('.number_divisors_box')
+commonFactorsOfNums.init('.common_factors_nums_box')
+twoNumsNOD.init('.two_nums_NOD_box')
 twoNumsNOK.init('.two_nums_NOK_box')
