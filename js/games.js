@@ -33,7 +33,7 @@ const guessTheNumber = (function() {
                 attempt -= 1
                 return show_result.innerText = `Перебор! Отгребай скорее!`
             } else {
-                return show_result.innerText = `Не ожиданно конечно, но вы победили, хотя ни чего не выиграли!)`
+                return show_result.innerText = `Неожиданно конечно, но вы победили, хотя ни чего не выиграли!)`
             }
         }
         
