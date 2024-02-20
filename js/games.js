@@ -20,17 +20,17 @@ const guessTheNumber = (function() {
         }
         
         let guesse = randomInt(1, 10)       
-        let attempt = 0
+        let attempt = 3
         let enteredNums = []
 
         function checkGuess(value, guesse) {
             if (value < guesse) {
                 enteredNums.push(value)
-                attempt += 1
+                attempt -= 1
                 return show_result.innerText = `Не добор, нужно чуток потрудится, давай поднажми!`
             } else if (value > guesse) {
                 enteredNums.push(value)
-                attempt += 1
+                attempt -= 1
                 return show_result.innerText = `Перебор! Отгребай скорее!`
             } else {
                 return show_result.innerText = `Не ожиданно конечно, но вы победили, хотя ни чего не выиграли!)`
@@ -38,7 +38,7 @@ const guessTheNumber = (function() {
         }
         
         function attemptGuesse(attempt) {
-            if (attempt === 4) {
+            if (attempt === 0) {
                 get_value.disabled = true
                 return show_result.innerText = `Ну ты прям победитель по жизни. Нет, ты продул ИИ!)`
             }
@@ -74,6 +74,8 @@ const guessTheNumber = (function() {
             entered_numbers.innerText = ''
             get_value.disabled = false
             guesse = randomInt(1, 10)
+            attempt = 3
+            enteredNums.length = 0;
         }
 
         enter_value.addEventListener('click', enterNumber)
