@@ -59,7 +59,6 @@ const guessTheNumber = (function() {
                 checkGuess(+get_value.value, guesse)
                 deleteValue(+get_value.value, guesse)
                 attemptGuesse(attempt)
-                console.log([...enteredNums])
                 entered_numbers.innerText = showEnteredNumbers()
             } else {
                 alert("Введите корректное значение от 1 до 10!")
