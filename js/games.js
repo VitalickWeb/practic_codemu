@@ -7,6 +7,7 @@
 //'введите число побольше', а если введено больше загаданного, то, соответственно,
 // компьютер должен написать 'введите число поменьше'.
 const guessTheNumber = (function() {
+
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
         const get_value = container.querySelector('.input_style')
@@ -84,6 +85,85 @@ const guessTheNumber = (function() {
     return {
         init
     }
-})('.project_games')
+})('.project_game')
 
-guessTheNumber.init('.project_games')
+guessTheNumber.init('.project_game')
+
+
+//Игра угадай ячейку на JavaScript
+//Давайте теперь реализуем игру угадай ячейку.
+//1) В этой игре будет дана таблица 10 на 10.
+// Компьютер случайным образом запоминает 10 ячеек из этой таблицы. Игроку нужно кликать
+// на клетки пока он не найдет все загаданные компьютером клетки.
+//2)Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
+// Если игрок не успеет угадать числа за отведенное время - он проиграл.
+const guessTheCell = (function() {
+
+    function init(containerSelector) {
+        const container = document.querySelector(containerSelector)
+        const table = container.querySelector('.table')
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+
+        function getArrRandomInt(randInt) {
+            let randomNums = []
+
+            for (let rand = 1; rand <= randInt; rand++) {
+                randNum = randomInt(1, 10)              
+                randomNums.push(randNum)
+            }
+        
+            return randomNums
+        }
+
+        function getRandomInt(arrNums) {
+            let newRes = []
+
+            for (let i = 1; i <= arrNums.length; i++) {
+                let newRandNum = getArrRandomInt(10).shift()
+
+                if (getArrRandomInt(10)[0]) {
+                    newRes.push(newRandNum)
+                } else {
+                    
+                }
+                console.log(getArrRandomInt(10)[0], newRandNum)
+            }
+            console.log(newRes)
+           
+            return newRes
+        }
+        getRandomInt(getArrRandomInt(10))
+
+        function makesTableRows(rows, cells) {
+            
+            for (let i = 0; i < rows; i++) {
+                let rows = document.createElement('tr');
+    
+                for (let j = 0; j < cells; j++) {
+                    let cells = document.createElement('td');
+                    
+
+                    rows.append(cells)
+                }
+    
+                table.append(rows)
+            }
+            
+        }
+
+        makesTableRows(6, 6)
+
+
+    }
+
+    return {
+        init
+    }
+})('.project_game_cell')
+
+guessTheCell.init('.project_game_cell')
+
+
