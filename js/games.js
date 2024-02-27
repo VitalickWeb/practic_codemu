@@ -101,51 +101,33 @@ const guessTheCell = (function() {
 
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
+        const buttonRestart = document.querySelector('.button_restart')
         const table = container.querySelector('.table')
 
         function randomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min
         }
-
-        function getArrRandomInt(randInt) {
-            let randomNums = []
-
-            for (let rand = 1; rand <= randInt; rand++) {
-                randNum = randomInt(1, 10)              
-                randomNums.push(randNum)
-            }
         
-            return randomNums
-        }
-
-        function getRandomInt(arrNums) {
-            let newRes = []
-
-            for (let i = 1; i <= arrNums.length; i++) {
-                let newRandNum = getArrRandomInt(10).shift()
-
-                if (getArrRandomInt(10)[0]) {
-                    newRes.push(newRandNum)
-                } else {
-                    
-                }
-                console.log(getArrRandomInt(10)[0], newRandNum)
-            }
-            console.log(newRes)
-           
-            return newRes
-        }
-        getRandomInt(getArrRandomInt(10))
-
+        let randNumInt = []
+        let count = 0
         function makesTableRows(rows, cells) {
-            
             for (let i = 0; i < rows; i++) {
                 let rows = document.createElement('tr');
-    
-                for (let j = 0; j < cells; j++) {
-                    let cells = document.createElement('td');
-                    
 
+                for (let j = 1; j <= cells; j++) {
+                    let cells = document.createElement('td');
+                     
+                    let randNum = randomInt(1, 8)
+
+                    if (!randNumInt.includes(randNum)) {
+                        randNumInt.push(randNum)
+                        
+                        cells.classList.add('active')
+                        cells.innerText = count + 1
+                        console.log(randNumInt, randNum)
+                        count++
+                    } 
+                           
                     rows.append(cells)
                 }
     
@@ -156,7 +138,11 @@ const guessTheCell = (function() {
 
         makesTableRows(6, 6)
 
+        function restartGame() {
+            makesTableRows()
+        }
 
+        buttonRestart.addEventListener('click', restartGame)
     }
 
     return {
