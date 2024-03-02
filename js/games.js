@@ -97,47 +97,59 @@ guessTheNumber.init('.project_game')
 // на клетки пока он не найдет все загаданные компьютером клетки.
 //2)Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
 // Если игрок не успеет угадать числа за отведенное время - он проиграл.
-const guessTheCell = (function() {
+const guesseTheCell = (function() {
 
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
         const buttonRestart = document.querySelector('.button_restart')
         const table = container.querySelector('.table')
 
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min
-        }
-        
-        let randNumInt = []
-        let count = 0
-        function makesTableRows(rows, cells) {
-            for (let i = 0; i < rows; i++) {
+        let count = 1
+
+        function makesTableRows(numRows, numCells, cutRandNum) {
+            let cells = []
+            for (let i = 0; i < numRows; i++) {
                 let rows = document.createElement('tr');
 
-                for (let j = 1; j <= cells; j++) {
-                    let cells = document.createElement('td');
-                     
-                    let randNum = randomInt(1, 8)
+                for (let j = 1; j <= numCells; j++) {
+                    let cell = document.createElement('td');  
+                    cell.id = count                                
+                    //console.log(cutRandNum[j])
+                    cell.addEventListener('click', pushTheRandomCells)
 
-                    if (!randNumInt.includes(randNum)) {
-                        randNumInt.push(randNum)
-                        
-                        cells.classList.add('active')
-                        cells.innerText = count + 1
-                        console.log(randNumInt, randNum)
-                        count++
+                    function pushTheRandomCells() {
+        
+                        cell.classList.add('active')
+                        cell.innerText = count    
+                                                
                     } 
-                           
-                    rows.append(cells)
+                    
+                    count++
+                    rows.append(cell)
+                    cells.push(+cell.id)
                 }
     
                 table.append(rows)
             }
             
+            return cells
+        }   
+        
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+              
+            return array;
         }
 
-        makesTableRows(6, 6)
-
+        // let cutRandNums = [];
+        // let cellsArr = makesTableRows(6, 6, cutRandNums); // Запускаем функцию с пустым cutRandNums
+        // let shuffleRandInt = shuffle(cellsArr);
+        // cutRandNums = shuffleRandInt.slice(0, 6); // После этого обновляем cutRandNums
+        // makesTableRows(6, 6, cutRandNums); // И вызываем функцию еще раз, чтобы обновить ячейки таблицы с новыми значениями
+        
         function restartGame() {
             makesTableRows()
         }
@@ -150,6 +162,6 @@ const guessTheCell = (function() {
     }
 })('.project_game_cell')
 
-guessTheCell.init('.project_game_cell')
+guesseTheCell.init('.project_game_cell')
 
 
