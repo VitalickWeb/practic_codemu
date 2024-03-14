@@ -313,8 +313,11 @@ body .container_games .wrapper .project_game_cell .game_cell_box .table_box .tab
   text-align: center;
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .table_box .table td.active {
-  background-color: #e44e3a;
+  background-color: #62e43a;
   color: #26262c;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .table_box .table td.not_active {
+  background-color: #e44e3a;
 }
 body .container_games .wrapper .footer_container {
   padding-top: 40px;

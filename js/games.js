@@ -66,7 +66,7 @@ const guessTheNumber = (function() {
             }    
         }   
         
-        function deletAll() {
+        function updateAll() {
             get_value.value = ''
             enter_value.value = ''
             clear_value.value = ''
@@ -79,7 +79,7 @@ const guessTheNumber = (function() {
         }
 
         enter_value.addEventListener('click', enterNumber)
-        clear_value.addEventListener('click', deletAll)
+        clear_value.addEventListener('click', updateAll)
     }
 
     return {
@@ -101,38 +101,33 @@ const guesseTheCell = (function() {
 
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
-        const buttonRestart = document.querySelector('.button_restart')
+        const buttonRestart = container.querySelector('.button_restart')
         const table = container.querySelector('.table')
+        
+        let tableRows = makesTableRows()
 
-        let count = 1
-
-        function makesTableRows(numRows, numCells, cutRandNum) {
-            let cells = []
-            for (let i = 0; i < numRows; i++) {
+        function makesTableRows() {        
+            let count = 1            
+            let randIntcells = []
+        
+            for (let i = 0; i < 6; i++) {
                 let rows = document.createElement('tr');
 
-                for (let j = 1; j <= numCells; j++) {
+                for (let j = 0; j < 6; j++) {
                     let cell = document.createElement('td');  
-                    cell.id = count                                
-                    //console.log(cutRandNum[j])
-                    cell.addEventListener('click', pushTheRandomCells)
-
-                    function pushTheRandomCells() {
-        
-                        cell.classList.add('active')
-                        cell.innerText = count    
-                                                
-                    } 
+                    cell.id = count                                 
                     
-                    count++
+                    console.log()
+
                     rows.append(cell)
-                    cells.push(+cell.id)
+                    randIntcells.push(+cell.id)
+                    count++      
                 }
     
                 table.append(rows)
             }
             
-            return cells
+            return randIntcells
         }   
         
         function shuffle(array) {
@@ -143,17 +138,25 @@ const guesseTheCell = (function() {
               
             return array;
         }
-
-        // let cutRandNums = [];
-        // let cellsArr = makesTableRows(6, 6, cutRandNums); // Запускаем функцию с пустым cutRandNums
-        // let shuffleRandInt = shuffle(cellsArr);
-        // cutRandNums = shuffleRandInt.slice(0, 6); // После этого обновляем cutRandNums
-        // makesTableRows(6, 6, cutRandNums); // И вызываем функцию еще раз, чтобы обновить ячейки таблицы с новыми значениями
         
+        let randCells = shuffle(tableRows).slice(0, 10);
+        console.log(randCells)
+        
+        function getRandNums(cellId) {
+           
+        }
+      
+        getRandNums()
+
+        function seekTheRandomCells() {                                    
+                    
+        } 
+
         function restartGame() {
-            makesTableRows()
+            //makesTableRows()
         }
 
+        table.addEventListener('click', seekTheRandomCells)
         buttonRestart.addEventListener('click', restartGame)
     }
 
@@ -163,5 +166,7 @@ const guesseTheCell = (function() {
 })('.project_game_cell')
 
 guesseTheCell.init('.project_game_cell')
+
+
 
 
