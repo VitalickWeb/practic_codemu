@@ -103,10 +103,8 @@ const guesseTheCell = (function() {
         const container = document.querySelector(containerSelector)
         const buttonRestart = container.querySelector('.button_restart')
         const table = container.querySelector('.table')
-        
-        let tableRows = makesTableRows()
 
-        function makesTableRows() {        
+        function makesTableRows() {       
             let count = 1            
             let randIntcells = []
         
@@ -116,8 +114,6 @@ const guesseTheCell = (function() {
                 for (let j = 0; j < 6; j++) {
                     let cell = document.createElement('td');  
                     cell.id = count                                 
-                    
-                    console.log()
 
                     rows.append(cell)
                     randIntcells.push(+cell.id)
@@ -139,24 +135,37 @@ const guesseTheCell = (function() {
             return array;
         }
         
-        let randCells = shuffle(tableRows).slice(0, 10);
-        console.log(randCells)
+        let tableCells = makesTableRows()
+        console.log(tableCells)
+        let randCells = shuffle(tableCells).slice(0, 10);
         
-        function getRandNums(cellId) {
-           
+        function assignRandomNumbersToCells(tableCells, arrCell) {
+            for (let i = 0; i < tableCells.length; i++) {
+                let randomNum = arrCell[i]
+                let cellId = tableCells[i]
+                
+                const cell = document.getElementById(cellId)
+                console.log(cell.id)
+                if (randomNum) {
+                    cell.addEventListener('click', function() {
+                        cell.innerText = randomNum
+                        
+                    })                                   
+                } else {
+                    cell.addEventListener('click', function() {
+                        cell.innerText = '*'
+                    })                     
+                }
+                
+            }
         }
-      
-        getRandNums()
-
-        function seekTheRandomCells() {                                    
-                    
-        } 
+        assignRandomNumbersToCells(tableCells, randCells)
+         
 
         function restartGame() {
             //makesTableRows()
         }
 
-        table.addEventListener('click', seekTheRandomCells)
         buttonRestart.addEventListener('click', restartGame)
     }
 
