@@ -103,6 +103,7 @@ const guesseTheCell = (function() {
         const container = document.querySelector(containerSelector)
         const buttonRestart = container.querySelector('.button_restart')
         const table = container.querySelector('.table')
+        const start = container.querySelector('#start');
 
         function makesTableRows() {       
             let count = 1            
@@ -136,31 +137,66 @@ const guesseTheCell = (function() {
         }
         
         let tableCells = makesTableRows()
-        console.log(tableCells)
         let randCells = shuffle(tableCells).slice(0, 10);
         
         function assignRandomNumbersToCells(tableCells, arrCell) {
+            let arrayRandomCellsId = []
+
             for (let i = 0; i < tableCells.length; i++) {
                 let randomNum = arrCell[i]
                 let cellId = tableCells[i]
                 
+                arrayRandomCellsId.push(cellId)
                 const cell = document.getElementById(cellId)
-                console.log(cell.id)
+                
                 if (randomNum) {
                     cell.addEventListener('click', function() {
                         cell.innerText = randomNum
-                        
+                        cell.classList.add('active')
                     })                                   
                 } else {
                     cell.addEventListener('click', function() {
-                        cell.innerText = '*'
+                        cell.innerText = 'boom!'
+                        cell.classList.add('not_active')
                     })                     
                 }
-                
             }
+
+            return arrayRandomCellsId
         }
-        assignRandomNumbersToCells(tableCells, randCells)
-         
+
+        function getTimer(num, randCellId) {
+            
+            let timerId = setInterval( () => {
+                console.log(num--)
+                for (let i = 0; i < randCellId.length; i++) {
+                    let cellId = randCellId[i]
+                    
+                    let cell = document.getElementById(cellId)
+                    
+                    if (num <= 0) {
+                        cell.innerText = ''
+                        cell.classList.add('pre_start')
+                    }
+                  
+                }
+        
+                if (num <= 0) {
+                    clearInterval(timerId)
+                    alert("You lose, ha ha ha!")
+                } 
+
+            }, 1000)        
+        }
+
+        start.addEventListener('click', function startTimer() {
+            assignRandomNumbersToCells(tableCells, randCells)
+            getTimer(10, cellId)
+
+            this.removeEventListener('click', startTimer)
+        })
+
+   
 
         function restartGame() {
             //makesTableRows()
@@ -175,6 +211,9 @@ const guesseTheCell = (function() {
 })('.project_game_cell')
 
 guesseTheCell.init('.project_game_cell')
+
+//#############################################33
+
 
 
 

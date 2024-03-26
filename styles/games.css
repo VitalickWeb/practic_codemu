@@ -318,6 +318,11 @@ body .container_games .wrapper .project_game_cell .game_cell_box .table_box .tab
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .table_box .table td.not_active {
   background-color: #e44e3a;
+  color: #f8f8f8;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .table_box .table td.pre_start {
+  background-color: #f8f8f8;
+  color: #f8f8f8;
 }
 body .container_games .wrapper .footer_container {
   padding-top: 40px;
