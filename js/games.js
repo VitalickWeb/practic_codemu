@@ -176,7 +176,7 @@ const guesseTheCell = (function() {
                     
                     if (num <= 0) {
                         cell.innerText = ''
-                        cell.classList.add('pre_start')
+                        //cell.classList.add('pre_start')
                     }
                   
                 }
@@ -190,13 +190,11 @@ const guesseTheCell = (function() {
         }
 
         start.addEventListener('click', function startTimer() {
-            assignRandomNumbersToCells(tableCells, randCells)
-            getTimer(10, cellId)
+            let cellId = assignRandomNumbersToCells(tableCells, randCells)
+            getTimer(30, cellId)
 
             this.removeEventListener('click', startTimer)
         })
-
-   
 
         function restartGame() {
             //makesTableRows()
