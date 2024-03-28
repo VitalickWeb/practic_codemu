@@ -138,21 +138,30 @@ const guesseTheCell = (function() {
         
         let tableCells = makesTableRows()
         let randCells = shuffle(tableCells).slice(0, 10);
-        
+        let guessedCount = 0; 
+        let totalCells = 10;
+
         function assignRandomNumbersToCells(tableCells, arrCell) {
             let arrayRandomCellsId = []
-
+            
             for (let i = 0; i < tableCells.length; i++) {
                 let randomNum = arrCell[i]
                 let cellId = tableCells[i]
                 
                 arrayRandomCellsId.push(cellId)
+
                 const cell = document.getElementById(cellId)
-                
+                      
                 if (randomNum) {
                     cell.addEventListener('click', function() {
                         cell.innerText = randomNum
                         cell.classList.add('active')
+
+                        guessedCount++
+                        
+                        if (guessedCount === totalCells) {
+                            alert('You winner bro!')
+                        }           
                     })                                   
                 } else {
                     cell.addEventListener('click', function() {
@@ -165,26 +174,28 @@ const guesseTheCell = (function() {
             return arrayRandomCellsId
         }
 
-        function getTimer(num, randCellId) {
+        function getTimer(timeCount, randCellId) {
             
             let timerId = setInterval( () => {
-                console.log(num--)
+                console.log(timeCount--)
                 for (let i = 0; i < randCellId.length; i++) {
                     let cellId = randCellId[i]
                     
                     let cell = document.getElementById(cellId)
                     
-                    if (num <= 0) {
+                    if (timeCount <= 0) {
                         cell.innerText = ''
                         //cell.classList.add('pre_start')
                     }
                   
                 }
         
-                if (num <= 0) {
+                if (timeCount <= 0) {
                     clearInterval(timerId)
                     alert("You lose, ha ha ha!")
-                } 
+                } else if (guessedCount === totalCells) {
+                    clearInterval(timerId)
+                }
 
             }, 1000)        
         }
