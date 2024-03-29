@@ -101,9 +101,10 @@ const guesseTheCell = (function() {
 
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
-        const buttonRestart = container.querySelector('.button_restart')
+        const start = container.querySelector('#start')
+        const showTimer = container.querySelector('.show_timer')
         const table = container.querySelector('.table')
-        const start = container.querySelector('#start');
+        const restart = container.querySelector('#restart');
 
         function makesTableRows() {       
             let count = 1            
@@ -153,20 +154,23 @@ const guesseTheCell = (function() {
                 const cell = document.getElementById(cellId)
                       
                 if (randomNum) {
-                    cell.addEventListener('click', function() {
+                    cell.addEventListener('click', function clickCells() {
                         cell.innerText = randomNum
                         cell.classList.add('active')
 
                         guessedCount++
                         
                         if (guessedCount === totalCells) {
-                            alert('You winner bro!')
-                        }           
+                            cell.innerText = ''
+                            alert('You winner bro!')                            
+                        }   
+                        this.removeEventListener('click', clickCells)        
                     })                                   
                 } else {
-                    cell.addEventListener('click', function() {
+                    cell.addEventListener('click', function clickCells() {
                         cell.innerText = 'boom!'
                         cell.classList.add('not_active')
+                        this.removeEventListener('click', clickCells)
                     })                     
                 }
             }
@@ -177,7 +181,12 @@ const guesseTheCell = (function() {
         function getTimer(timeCount, randCellId) {
             
             let timerId = setInterval( () => {
-                console.log(timeCount--)
+                showTimer.innerText = --timeCount
+
+                if (timeCount <= 5) {
+                    showTimer.classList.add('active')
+                }
+
                 for (let i = 0; i < randCellId.length; i++) {
                     let cellId = randCellId[i]
                     
@@ -185,7 +194,6 @@ const guesseTheCell = (function() {
                     
                     if (timeCount <= 0) {
                         cell.innerText = ''
-                        //cell.classList.add('pre_start')
                     }
                   
                 }
@@ -199,7 +207,8 @@ const guesseTheCell = (function() {
 
             }, 1000)        
         }
-
+        
+       
         start.addEventListener('click', function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
             getTimer(30, cellId)
@@ -208,10 +217,10 @@ const guesseTheCell = (function() {
         })
 
         function restartGame() {
-            //makesTableRows()
+            makesTableRows()
         }
 
-        buttonRestart.addEventListener('click', restartGame)
+        restart.addEventListener('click', restartGame)
     }
 
     return {

@@ -237,7 +237,6 @@ body .container_games .wrapper .project_game_cell .game_cell_box .description_ga
   border: 1px solid white;
   border-radius: 3px;
   margin-top: 50px;
-  margin-bottom: 20px;
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .description_game_cell_box p {
   margin: 0;
@@ -250,8 +249,9 @@ body .container_games .wrapper .project_game_cell .game_cell_box .description_ga
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box {
   margin-bottom: 20px;
+  margin-top: 20px;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start {
   display: inline-block;
   padding: 10px 20px;
   background-color: #2fc75d;
@@ -262,21 +262,22 @@ body .container_games .wrapper .project_game_cell .game_cell_box .button_restart
   border-radius: 5px;
   transition: all 0.2s ease;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart:hover {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start:hover {
   background-color: #2fc75d;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart:active {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start:active {
   background-color: #2fc75d;
   color: #c4c4c4;
   transition: all 0.2s ease;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart.btn_enter {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start.btn_enter {
   margin-top: 20px;
   position: relative;
   overflow: hidden;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart.btn_enter:after {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start.btn_enter:after {
   content: "";
   background: rgba(255, 255, 255, 0.5);
   position: absolute;
@@ -289,13 +290,72 @@ body .container_games .wrapper .project_game_cell .game_cell_box .button_restart
   transition: width 0.5s ease, height 0.5s ease;
   transform: translate(-50%, -50%);
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart.btn_enter:hover:after {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start.btn_enter:hover:after {
   width: 0;
   height: 0;
 }
-body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .button_restart.btn_enter span {
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #start.btn_enter span {
   position: relative;
   z-index: 1;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d67b2b;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart:hover {
+  background-color: #d67b2b;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart:active {
+  background-color: #d67b2b;
+  color: #c4c4c4;
+  transition: all 0.2s ease;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart.btn_enter {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart.btn_enter:after {
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  border-radius: 50%;
+  z-index: 0;
+  transition: width 0.5s ease, height 0.5s ease;
+  transform: translate(-50%, -50%);
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart.btn_enter:hover:after {
+  width: 0;
+  height: 0;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box #restart.btn_enter span {
+  position: relative;
+  z-index: 1;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .show_timer_box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .show_timer_box .show_timer {
+  color: #FFF;
+  font-size: 28px;
+}
+body .container_games .wrapper .project_game_cell .game_cell_box .show_timer_box .active {
+  color: red;
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .table_box {
   width: 100%;
