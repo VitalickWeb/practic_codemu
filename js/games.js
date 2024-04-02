@@ -211,7 +211,7 @@ const guesseTheCell = (function() {
        
         function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
-            getTimer(6, cellId)
+            getTimer(30, cellId)
 
             this.removeEventListener('click', startTimer)    
             start.disabled = false

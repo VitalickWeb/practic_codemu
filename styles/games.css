@@ -418,14 +418,14 @@ body .container_games .wrapper .project_game_cell .game_cell_box .table_box .pop
   transform: translate(-50%, -50%);
   width: 100%;
   height: 50px;
-  background-color: #141416a4;
+  background-color: #141416c6;
   border-radius: 2px;
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .table_box .popup_active_lose .close {
   position: absolute;
   top: 5px;
   right: 10px;
-  color: #f21c1c;
+  color: #fb0606;
   cursor: pointer;
 }
 body .container_games .wrapper .project_game_cell .game_cell_box .table_box .popup_active_lose .lose {
@@ -433,7 +433,7 @@ body .container_games .wrapper .project_game_cell .game_cell_box .table_box .pop
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f21c1c;
+  color: #fb0606;
   font-size: 22px;
   margin: 0;
 }
