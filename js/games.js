@@ -103,18 +103,20 @@ const guesseTheCell = (function() {
         const container = document.querySelector(containerSelector)
         const start = container.querySelector('#start')
         const showTimer = container.querySelector('.show_timer')
+        const showPopupCongrat = container.querySelector('.popup_box_congrat')
+        const showPopupLose = container.querySelector('.popup_box_lose')
         const table = container.querySelector('.table')
-        const restart = container.querySelector('#restart');
+        const restart = container.querySelector('#restart')
 
         function makesTableRows() {       
             let count = 1            
             let randIntcells = []
         
             for (let i = 0; i < 6; i++) {
-                let rows = document.createElement('tr');
+                let rows = document.createElement('tr')
 
                 for (let j = 0; j < 6; j++) {
-                    let cell = document.createElement('td');  
+                    let cell = document.createElement('td')  
                     cell.id = count                                 
 
                     rows.append(cell)
@@ -138,8 +140,8 @@ const guesseTheCell = (function() {
         }
         
         let tableCells = makesTableRows()
-        let randCells = shuffle(tableCells).slice(0, 10);
-        let guessedCount = 0; 
+        let randCells = shuffle(tableCells).slice(0, 10)
+        let guessedCount = 0;
         let totalCells = 10;
 
         function assignRandomNumbersToCells(tableCells, arrCell) {
@@ -162,8 +164,8 @@ const guesseTheCell = (function() {
                         
                         if (guessedCount === totalCells) {
                             cell.innerText = ''
-                            alert('You winner bro!')                            
-                        }   
+                            showPopupCongrat.classList.add('popup_congrat_active');                            
+                        } 
                         this.removeEventListener('click', clickCells)        
                     })                                   
                 } else {
@@ -171,7 +173,7 @@ const guesseTheCell = (function() {
                         cell.innerText = 'boom!'
                         cell.classList.add('not_active')
                         this.removeEventListener('click', clickCells)
-                    })                     
+                    })
                 }
             }
 
@@ -194,32 +196,37 @@ const guesseTheCell = (function() {
                     
                     if (timeCount <= 0) {
                         cell.innerText = ''
-                    }
-                  
+                    }                  
                 }
         
                 if (timeCount <= 0) {
                     clearInterval(timerId)
-                    alert("You lose, ha ha ha!")
+                    showPopupLose.classList.add('popup_active_lose')              
                 } else if (guessedCount === totalCells) {
                     clearInterval(timerId)
                 }
 
             }, 1000)        
-        }
-        
+        }        
        
-        start.addEventListener('click', function startTimer() {
+        function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
-            getTimer(30, cellId)
+            getTimer(6, cellId)
 
-            this.removeEventListener('click', startTimer)
-        })
+            this.removeEventListener('click', startTimer)    
+            start.disabled = false
+        }
 
         function restartGame() {
-            makesTableRows()
+            // if (start.disabled === false) {
+            //     start.addEventListener('click', startTimer)        
+            // }
+            showTimer.innerText = 30
+            showTimer.classList.remove('active')
+            showTimer.classList.add('show_timer')
         }
 
+        start.addEventListener('click', startTimer)
         restart.addEventListener('click', restartGame)
     }
 
@@ -230,7 +237,7 @@ const guesseTheCell = (function() {
 
 guesseTheCell.init('.project_game_cell')
 
-//#############################################33
+//#############################################
 
 
 
