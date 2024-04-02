@@ -105,6 +105,7 @@ const guesseTheCell = (function() {
         const showTimer = container.querySelector('.show_timer')
         const showPopupCongrat = container.querySelector('.popup_box_congrat')
         const showPopupLose = container.querySelector('.popup_box_lose')
+        const close = container.querySelector('.close')
         const table = container.querySelector('.table')
         const restart = container.querySelector('#restart')
 
@@ -196,12 +197,15 @@ const guesseTheCell = (function() {
                     
                     if (timeCount <= 0) {
                         cell.innerText = ''
+                        cell.style.pointerEvents = 'none'; // Отключение событий для ячейки
+                        cell.style.opacity = '0.5'; 
                     }                  
                 }
         
                 if (timeCount <= 0) {
                     clearInterval(timerId)
-                    showPopupLose.classList.add('popup_active_lose')              
+                    showPopupLose.classList.add('popup_active_lose')
+                    
                 } else if (guessedCount === totalCells) {
                     clearInterval(timerId)
                 }
@@ -209,9 +213,14 @@ const guesseTheCell = (function() {
             }, 1000)        
         }        
        
+        function closePopup() {
+            //showPopupLose.classList.add('popup_box_congrat')
+            showPopupLose.classList.add('popup_box_lose')
+        }
+
         function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
-            getTimer(30, cellId)
+            getTimer(3, cellId)
 
             this.removeEventListener('click', startTimer)    
             start.disabled = false
@@ -226,6 +235,7 @@ const guesseTheCell = (function() {
             showTimer.classList.add('show_timer')
         }
 
+        close.addEventListener('click', closePopup)
         start.addEventListener('click', startTimer)
         restart.addEventListener('click', restartGame)
     }
