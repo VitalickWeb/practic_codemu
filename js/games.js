@@ -105,10 +105,11 @@ const guesseTheCell = (function() {
         const showTimer = container.querySelector('.show_timer')
         const showPopupCongrat = container.querySelector('.popup_box_congrat')
         const showPopupLose = container.querySelector('.popup_box_lose')
-        const close = container.querySelector('.close')
+        const closePopupCongrat = container.querySelector('.popup_box_congrat')
+        const closePopupLose = container.querySelector('.popup_box_lose')
         const table = container.querySelector('.table')
         const restart = container.querySelector('#restart')
-
+        console.log()
         function makesTableRows() {       
             let count = 1            
             let randIntcells = []
@@ -181,7 +182,7 @@ const guesseTheCell = (function() {
             return arrayRandomCellsId
         }
 
-        function getTimer(timeCount, randCellId) {
+        function getTimer(timeCount, randCellId, emptyStr) {
             
             let timerId = setInterval( () => {
                 showTimer.innerText = --timeCount
@@ -197,11 +198,10 @@ const guesseTheCell = (function() {
                     
                     if (timeCount <= 0) {
                         cell.innerText = ''
-                        cell.style.pointerEvents = 'none'; // Отключение событий для ячейки
-                        cell.style.opacity = '0.5'; 
-                    }                  
+                        cell.classList.add('disabled_cell') // Отключение событий для ячейки                        
+                    }                    
                 }
-        
+
                 if (timeCount <= 0) {
                     clearInterval(timerId)
                     showPopupLose.classList.add('popup_active_lose')
@@ -212,11 +212,6 @@ const guesseTheCell = (function() {
 
             }, 1000)        
         }        
-       
-        function closePopup() {
-            //showPopupLose.classList.add('popup_box_congrat')
-            showPopupLose.classList.add('popup_box_lose')
-        }
 
         function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
@@ -227,15 +222,23 @@ const guesseTheCell = (function() {
         }
 
         function restartGame() {
+            for (let i = 0; i < tableCells.length; i++) {
+                let cellId = tableCells[i]
+
+                const cell = document.getElementById(cellId)
+                cell.classList.remove('disabled_cell')
+            }
             // if (start.disabled === false) {
             //     start.addEventListener('click', startTimer)        
             // }
-            showTimer.innerText = 30
+           
+            getTimer(30, [], '')
+            showTimer.innerText = 30            
+            showPopupLose.classList.remove('popup_active_lose')
             showTimer.classList.remove('active')
             showTimer.classList.add('show_timer')
         }
 
-        close.addEventListener('click', closePopup)
         start.addEventListener('click', startTimer)
         restart.addEventListener('click', restartGame)
     }
