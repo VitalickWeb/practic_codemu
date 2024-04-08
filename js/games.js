@@ -211,22 +211,28 @@ const guesseTheCell = (function() {
             }, 1000)        
         }        
 
+        const cells = document.querySelectorAll('.table td');
+
         function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
             getTimer(3, cellId)
 
             this.removeEventListener('click', startTimer) 
             start.disabled = true
-            start.classList.add('start_active');   
+            start.classList.add('start_active')   
+
+            cells.forEach(cell => {
+                cell.classList.remove('disabled_cell')
+            });
         }
 
         function restartGame() {
             // 1. Сбросить содержимое всех ячеек в таблице.
             // 2. Удалить все классы с ячеек.
-            const cells = document.querySelectorAll('.table td');
             cells.forEach(cell => {
                 cell.innerText = '';
                 cell.classList.remove('active', 'not_active', 'disabled_cell');
+                cell.classList.add('disabled_cell')
             });
 
             // 3. Установить значения по умолчанию для переменных.
