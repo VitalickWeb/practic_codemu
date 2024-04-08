@@ -105,11 +105,9 @@ const guesseTheCell = (function() {
         const showTimer = container.querySelector('.show_timer')
         const showPopupCongrat = container.querySelector('.popup_box_congrat')
         const showPopupLose = container.querySelector('.popup_box_lose')
-        const closePopupCongrat = container.querySelector('.popup_box_congrat')
-        const closePopupLose = container.querySelector('.popup_box_lose')
         const table = container.querySelector('.table')
         const restart = container.querySelector('#restart')
-        console.log()
+        
         function makesTableRows() {       
             let count = 1            
             let randIntcells = []
@@ -182,7 +180,7 @@ const guesseTheCell = (function() {
             return arrayRandomCellsId
         }
 
-        function getTimer(timeCount, randCellId, emptyStr) {
+        function getTimer(timeCount, randCellId) {
             
             let timerId = setInterval( () => {
                 showTimer.innerText = --timeCount
@@ -217,26 +215,36 @@ const guesseTheCell = (function() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
             getTimer(3, cellId)
 
-            this.removeEventListener('click', startTimer)    
-            start.disabled = false
+            this.removeEventListener('click', startTimer) 
+            start.disabled = true
+            start.classList.add('start_active');   
         }
 
         function restartGame() {
-            for (let i = 0; i < tableCells.length; i++) {
-                let cellId = tableCells[i]
+            // 1. Сбросить содержимое всех ячеек в таблице.
+            // 2. Удалить все классы с ячеек.
+            const cells = document.querySelectorAll('.table td');
+            cells.forEach(cell => {
+                cell.innerText = '';
+                cell.classList.remove('active', 'not_active', 'disabled_cell');
+            });
 
-                const cell = document.getElementById(cellId)
-                cell.classList.remove('disabled_cell')
-            }
-            // if (start.disabled === false) {
-            //     start.addEventListener('click', startTimer)        
-            // }
-           
-            getTimer(30, [], '')
-            showTimer.innerText = 30            
-            showPopupLose.classList.remove('popup_active_lose')
-            showTimer.classList.remove('active')
-            showTimer.classList.add('show_timer')
+            // 3. Установить значения по умолчанию для переменных.
+            guessedCount = 0;
+            totalCells = 10;
+
+            // 4. Скрыть все всплывающие окна.
+            showPopupCongrat.classList.remove('popup_congrat_active');
+            showPopupLose.classList.remove('popup_active_lose');
+
+            // 5. Восстановить начальные значения для таймера и других элементов интерфейса.
+            showTimer.innerText = 30;
+            showTimer.classList.remove('active');
+            start.classList.remove('start_active');
+            start.disabled = false;
+
+            // Добавить обработчик события для кнопки "start"
+            start.addEventListener('click', startTimer);
         }
 
         start.addEventListener('click', startTimer)
