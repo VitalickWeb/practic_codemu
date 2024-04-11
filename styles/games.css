@@ -352,6 +352,9 @@ body .container_games .wrapper .project_game_cell .game_cell_box .button_restart
   position: relative;
   z-index: 1;
 }
+body .container_games .wrapper .project_game_cell .game_cell_box .button_restart_box .restart_active {
+  opacity: 0.7;
+}
 body .container_games .wrapper .project_game_cell .game_cell_box .show_timer_box {
   display: flex;
   justify-content: center;

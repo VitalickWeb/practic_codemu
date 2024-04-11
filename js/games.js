@@ -144,9 +144,11 @@ const guesseTheCell = (function() {
         let guessedCount = 0;
         let totalCells = 10;
 
+        const cells = document.querySelectorAll('.table td')
+
         function assignRandomNumbersToCells(tableCells, arrCell) {
             let arrayRandomCellsId = []
-            
+
             for (let i = 0; i < tableCells.length; i++) {
                 let randomNum = arrCell[i]
                 let cellId = tableCells[i]
@@ -154,7 +156,7 @@ const guesseTheCell = (function() {
                 arrayRandomCellsId.push(cellId)
 
                 const cell = document.getElementById(cellId)
-                      
+                
                 if (randomNum) {
                     cell.addEventListener('click', function clickCells() {
                         cell.innerText = randomNum
@@ -164,7 +166,12 @@ const guesseTheCell = (function() {
                         
                         if (guessedCount === totalCells) {
                             cell.innerText = ''
-                            showPopupCongrat.classList.add('popup_congrat_active');                            
+                            showPopupCongrat.classList.add('popup_congrat_active')
+                            restart.disabled = false
+                            restart.classList.remove('restart_active')
+                            cells.forEach(cell => {
+                                cell.classList.add('disabled_cell')
+                            });
                         } 
                         this.removeEventListener('click', clickCells)        
                     })                                   
@@ -195,6 +202,8 @@ const guesseTheCell = (function() {
                     let cell = document.getElementById(cellId)
                     
                     if (timeCount <= 0) {
+                        restart.disabled = false
+                        restart.classList.remove('restart_active')
                         cell.innerText = ''
                         cell.classList.add('disabled_cell') // Отключение событий для ячейки                        
                     }                    
@@ -209,17 +218,17 @@ const guesseTheCell = (function() {
                 }
 
             }, 1000)        
-        }        
-
-        const cells = document.querySelectorAll('.table td');
+        }     
 
         function startTimer() {
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
-            getTimer(3, cellId)
+            getTimer(30, cellId)
 
             this.removeEventListener('click', startTimer) 
             start.disabled = true
+            restart.disabled = true
             start.classList.add('start_active')   
+            restart.classList.add('restart_active')
 
             cells.forEach(cell => {
                 cell.classList.remove('disabled_cell')
