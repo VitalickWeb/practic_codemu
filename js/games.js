@@ -143,7 +143,7 @@ const guesseTheCell = (function() {
         let randCells = shuffle(tableCells).slice(0, 10)
         let guessedCount = 0;
         let totalCells = 10;
-
+    
         const cells = document.querySelectorAll('.table td')
 
         function assignRandomNumbersToCells(tableCells, arrCell) {
@@ -161,7 +161,7 @@ const guesseTheCell = (function() {
                     cell.addEventListener('click', function clickCells() {
                         cell.innerText = randomNum
                         cell.classList.add('active')
-
+                        
                         guessedCount++
                         
                         if (guessedCount === totalCells) {
@@ -220,11 +220,10 @@ const guesseTheCell = (function() {
             }, 1000)        
         }     
 
-        function startTimer() {
+        function startTimer() {            
             let cellId = assignRandomNumbersToCells(tableCells, randCells)
             getTimer(30, cellId)
-
-            this.removeEventListener('click', startTimer) 
+            console.log(cellId)
             start.disabled = true
             restart.disabled = true
             start.classList.add('start_active')   
@@ -240,11 +239,12 @@ const guesseTheCell = (function() {
             // 2. Удалить все классы с ячеек.
             cells.forEach(cell => {
                 cell.innerText = '';
-                cell.classList.remove('active', 'not_active', 'disabled_cell');
+                cell.classList.remove('active');
+                cell.classList.remove('not_active');
                 cell.classList.add('disabled_cell')
             });
 
-            // 3. Установить значения по умолчанию для переменных.
+            // 3. Установить значения по умолчанию для переменных.          
             guessedCount = 0;
             totalCells = 10;
 
@@ -257,9 +257,9 @@ const guesseTheCell = (function() {
             showTimer.classList.remove('active');
             start.classList.remove('start_active');
             start.disabled = false;
-
-            // Добавить обработчик события для кнопки "start"
-            start.addEventListener('click', startTimer);
+            
+            randCells = shuffle(tableCells).slice(0, 10)
+            
         }
 
         start.addEventListener('click', startTimer)
