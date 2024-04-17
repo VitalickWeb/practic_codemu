@@ -466,40 +466,83 @@ body .container_games .wrapper .footer_container {
   padding-top: 40px;
   margin-bottom: 40px;
 }
-body .container_games .wrapper .footer_container .link_box {
+body .container_games .wrapper .footer_container .block_links {
+  display: flex;
+  justify-content: space-around;
+}
+body .container_games .wrapper .footer_container .block_links .link_box_prev {
   display: flex;
   justify-content: center;
 }
-body .container_games .wrapper .footer_container .link_box a.link_pagination {
+body .container_games .wrapper .footer_container .block_links .link_box_prev a.link_pagination_prev {
+  width: 112px;
   color: snow;
   font-size: 18px;
-  padding: 6px 8px 6px 8px;
+  padding: 6px 0 6px 8px;
   background-color: #56567d;
   border: 1px solid #90909b;
   border-radius: 3px;
   transition: all 0.3s ease 0.3s;
   text-decoration: none;
 }
-body .container_games .wrapper .footer_container .link_box a.link_pagination:hover span.next {
+body .container_games .wrapper .footer_container .block_links .link_box_prev a.link_pagination_prev:hover span.prev_page {
+  color: #ef4f3a;
+  padding-right: 6px;
+  /* Дополнительный отступ для стрелки */
+}
+body .container_games .wrapper .footer_container .block_links .link_box_prev a.link_pagination_prev:active {
+  color: #ef4f3a;
+  font-size: 18px;
+  padding: 6px 6px 6px 6px;
+  background-color: #3b3b65;
+  border: 1px solid #29292b;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+body .container_games .wrapper .footer_container .block_links .link_box_prev a.link_pagination_prev:active span.arrow_left {
+  color: #ef4f3a;
+  padding-left: 0;
+  /* Дополнительный отступ для стрелки */
+}
+body .container_games .wrapper .footer_container .block_links .link_box_prev span.arrow_left {
+  transition: all 0.3s ease;
+}
+body .container_games .wrapper .footer_container .block_links .link_box_next {
+  display: flex;
+  justify-content: center;
+}
+body .container_games .wrapper .footer_container .block_links .link_box_next a.link_pagination_next {
+  width: 112px;
+  color: snow;
+  font-size: 18px;
+  padding: 6px 0 6px 8px;
+  background-color: #56567d;
+  border: 1px solid #90909b;
+  border-radius: 3px;
+  transition: all 0.3s ease 0.3s;
+  text-decoration: none;
+}
+body .container_games .wrapper .footer_container .block_links .link_box_next a.link_pagination_next:hover span.arrow_rigth {
   color: #ef4f3a;
   padding-left: 6px;
   /* Дополнительный отступ для стрелки */
 }
-body .container_games .wrapper .footer_container .link_box a.link_pagination:active {
+body .container_games .wrapper .footer_container .block_links .link_box_next a.link_pagination_next:active {
   color: #ef4f3a;
   font-size: 18px;
-  padding: 6px 6px 6px 6px;
+  padding: 6px 0 6px 8px;
   background-color: #3b3b65;
   border: 1px solid #90909b;
   border-radius: 3px;
   transition: all 0.2s ease;
   text-decoration: none;
 }
-body .container_games .wrapper .footer_container .link_box a.link_pagination:active span.next {
+body .container_games .wrapper .footer_container .block_links .link_box_next a.link_pagination_next:active span.arrow_rigth {
   color: #ef4f3a;
-  padding-left: 0;
+  margin-left: 0;
   /* Дополнительный отступ для стрелки */
 }
-body .container_games .wrapper .footer_container .link_box span.next {
+body .container_games .wrapper .footer_container .block_links .link_box_next span.arrow_rigth {
   transition: all 0.3s ease;
 }

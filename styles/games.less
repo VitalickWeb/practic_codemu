@@ -511,47 +511,99 @@ body {
                 padding-top: 40px;
                 margin-bottom: 40px;
 
-                .link_box {
+                .block_links {
                     display: flex;
-                    justify-content: center;
-
-                    a.link_pagination {
-                        color: snow;
-                        font-size: 18px;
-                        padding: 6px 8px 6px 8px;
-                        background-color:#56567d;
-                        border: 1px solid #90909b;
-                        border-radius: 3px;
-                        
-                        transition: all 0.3s ease 0.3s;
-                        text-decoration: none;
-
-                        &:hover {
-                            span.next {
-                                color: rgb(239, 79, 58);
-                                padding-left: 6px; /* Дополнительный отступ для стрелки */
-                            }
-                        }
-
-                        &:active {
-                            color: rgb(239, 79, 58);
+                    justify-content: space-around;
+                
+                    .link_box_prev {
+                        display: flex;
+                        justify-content: center;
+    
+                        a.link_pagination_prev {
+                            width: 112px;
+                            color: snow;
                             font-size: 18px;
-                            padding: 6px 6px 6px 6px;
-                            background-color:#3b3b65;
+                            padding: 6px 0 6px 8px;
+                            background-color:#56567d;
                             border: 1px solid #90909b;
                             border-radius: 3px;
-    
-                            transition: all 0.2s ease;
-                            text-decoration: none;  
                             
-                            span.next {
+                            transition: all 0.3s ease 0.3s;
+                            text-decoration: none;
+    
+                            &:hover {
+                                span.prev_page {
+                                    color: rgb(239, 79, 58);
+                                    padding-right: 6px; /* Дополнительный отступ для стрелки */
+                                }
+                            }
+    
+                            &:active {
                                 color: rgb(239, 79, 58);
-                                padding-left: 0; /* Дополнительный отступ для стрелки */
+                                font-size: 18px;
+                                padding: 6px 6px 6px 6px;
+                                background-color:#3b3b65;
+                                border: 1px solid #29292b;
+                                border-radius: 3px;
+        
+                                transition: all 0.2s ease;
+                                text-decoration: none;  
+                                
+                                span.arrow_left {
+                                    color: rgb(239, 79, 58);
+                                    padding-left: 0; /* Дополнительный отступ для стрелки */
+                                }
                             }
                         }
+                        
+                        span.arrow_left {
+                            transition: all 0.3s ease;
+                        }
                     }
-                    span.next {
-                        transition: all 0.3s ease;
+    
+                    .link_box_next {
+                        display: flex;
+                        justify-content: center;
+    
+                        a.link_pagination_next {
+                            width: 112px;
+                            color: snow;
+                            font-size: 18px;
+                            padding: 6px 0 6px 8px;
+                            background-color:#56567d;
+                            border: 1px solid #90909b;
+                            border-radius: 3px;
+                            
+                            transition: all 0.3s ease 0.3s;
+                            text-decoration: none;
+    
+                            &:hover {
+                                span.arrow_rigth {
+                                    color: rgb(239, 79, 58);
+                                    padding-left: 6px; /* Дополнительный отступ для стрелки */
+                                }
+                            }
+    
+                            &:active {
+                                color: rgb(239, 79, 58);
+                                font-size: 18px;
+                                padding: 6px 0 6px 8px;
+                                background-color:#3b3b65;
+                                border: 1px solid #90909b;
+                                border-radius: 3px;
+        
+                                transition: all 0.2s ease;
+                                text-decoration: none;  
+                                
+                                span.arrow_rigth {
+                                    color: rgb(239, 79, 58);
+                                    margin-left: 0; /* Дополнительный отступ для стрелки */
+                                }
+                            }
+                        }
+                        span.arrow_rigth {
+                            transition: all 0.3s ease;
+                        }
                     }
                 }
             }
