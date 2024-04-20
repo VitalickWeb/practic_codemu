@@ -520,37 +520,44 @@ body {
                         justify-content: center;
     
                         a.link_pagination_prev {
-                            width: 112px;
+                            width: 112px;   
                             color: snow;
                             font-size: 18px;
-                            padding: 6px 0 6px 8px;
-                            background-color:#56567d;
+                            padding: 6px 8px 6px 0;
                             border: 1px solid #90909b;
                             border-radius: 3px;
                             
                             transition: all 0.3s ease 0.3s;
                             text-decoration: none;
     
+                            display: flex;
+                            justify-content: flex-end;
+
+                            span.arrow_left {
+                                font-size: 17px;
+                                color: snow;
+                                margin-right: 5px;
+                            }
+
                             &:hover {
-                                span.prev_page {
+                                span.arrow_left {                                    
                                     color: rgb(239, 79, 58);
                                     padding-right: 6px; /* Дополнительный отступ для стрелки */
                                 }
                             }
     
                             &:active {
-                                color: rgb(239, 79, 58);
+                                color: snow;
                                 font-size: 18px;
-                                padding: 6px 6px 6px 6px;
-                                background-color:#3b3b65;
-                                border: 1px solid #29292b;
+                                padding: 6px 8px 6px 0;
+                                border: 1px solid rgb(239, 79, 58);
                                 border-radius: 3px;
         
                                 transition: all 0.2s ease;
                                 text-decoration: none;  
                                 
                                 span.arrow_left {
-                                    color: rgb(239, 79, 58);
+                                    color: snow;
                                     padding-left: 0; /* Дополнительный отступ для стрелки */
                                 }
                             }
@@ -570,13 +577,17 @@ body {
                             color: snow;
                             font-size: 18px;
                             padding: 6px 0 6px 8px;
-                            background-color:#56567d;
                             border: 1px solid #90909b;
                             border-radius: 3px;
                             
                             transition: all 0.3s ease 0.3s;
                             text-decoration: none;
     
+                            span.arrow_rigth {
+                                font-size: 17px;
+                                color: snow;
+                            }
+
                             &:hover {
                                 span.arrow_rigth {
                                     color: rgb(239, 79, 58);
@@ -585,18 +596,16 @@ body {
                             }
     
                             &:active {
-                                color: rgb(239, 79, 58);
+                                color: snow;
                                 font-size: 18px;
                                 padding: 6px 0 6px 8px;
-                                background-color:#3b3b65;
-                                border: 1px solid #90909b;
+                                border: 1px solid rgb(239, 79, 58);
                                 border-radius: 3px;
-        
                                 transition: all 0.2s ease;
                                 text-decoration: none;  
                                 
                                 span.arrow_rigth {
-                                    color: rgb(239, 79, 58);
+                                    color: snow;
                                     margin-left: 0; /* Дополнительный отступ для стрелки */
                                 }
                             }

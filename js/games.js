@@ -143,6 +143,8 @@ const guesseTheCell = (function() {
         let randCells = shuffle(tableCells).slice(0, 10)
         let guessedCount = 0;
         let totalCells = 10;
+
+        restart.disabled = true
     
         const cells = document.querySelectorAll('.table td')
 

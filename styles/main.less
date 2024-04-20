@@ -734,43 +734,45 @@ body {
                     display: flex;
                     justify-content: center;
 
-                    a.link_pagination {
+                    a.link_pagination_next {
+                        width: 112px;
                         color: snow;
                         font-size: 18px;
-                        padding: 6px 8px 6px 8px;
-                        background-color:#56567d;
+                        padding: 6px 0 6px 8px;
                         border: 1px solid #90909b;
                         border-radius: 3px;
                         
                         transition: all 0.3s ease 0.3s;
                         text-decoration: none;
 
+                        span.arrow_rigth {
+                            font-size: 17px;
+                            color: snow;
+                        }
+
                         &:hover {
-                            span.next {
+                            span.arrow_rigth {
                                 color: rgb(239, 79, 58);
                                 padding-left: 6px; /* Дополнительный отступ для стрелки */
                             }
                         }
-                             
-                        &:active {
-                            color: rgb(239, 79, 58);
-                            font-size: 18px;
-                            padding: 6px 6px 6px 6px;
-                            background-color:#3b3b65;
-                            border: 1px solid #90909b;
-                            border-radius: 3px;
 
+                        &:active {
+                            color: snow;
+                            font-size: 18px;
+                            padding: 6px 0 6px 8px;
+                            border: 1px solid rgb(239, 79, 58);
+                            border-radius: 3px;
                             transition: all 0.2s ease;
                             text-decoration: none;  
                             
-                            span.next {
-                                color: rgb(239, 79, 58);
-                                padding-left: 0; /* Дополнительный отступ для стрелки */
+                            span.arrow_rigth {
+                                color: snow;
+                                margin-left: 0; /* Дополнительный отступ для стрелки */
                             }
                         }
                     }
-                   
-                    span.next {
+                    span.arrow_rigth {
                         transition: all 0.3s ease;
                     }
                 }

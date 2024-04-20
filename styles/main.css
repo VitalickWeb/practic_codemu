@@ -632,36 +632,39 @@ body .container .wrapper .footer_container .link_box {
   display: flex;
   justify-content: center;
 }
-body .container .wrapper .footer_container .link_box a.link_pagination {
+body .container .wrapper .footer_container .link_box a.link_pagination_next {
+  width: 112px;
   color: snow;
   font-size: 18px;
-  padding: 6px 8px 6px 8px;
-  background-color: #56567d;
+  padding: 6px 0 6px 8px;
   border: 1px solid #90909b;
   border-radius: 3px;
   transition: all 0.3s ease 0.3s;
   text-decoration: none;
 }
-body .container .wrapper .footer_container .link_box a.link_pagination:hover span.next {
+body .container .wrapper .footer_container .link_box a.link_pagination_next span.arrow_rigth {
+  font-size: 17px;
+  color: snow;
+}
+body .container .wrapper .footer_container .link_box a.link_pagination_next:hover span.arrow_rigth {
   color: #ef4f3a;
   padding-left: 6px;
   /* Дополнительный отступ для стрелки */
 }
-body .container .wrapper .footer_container .link_box a.link_pagination:active {
-  color: #ef4f3a;
+body .container .wrapper .footer_container .link_box a.link_pagination_next:active {
+  color: snow;
   font-size: 18px;
-  padding: 6px 6px 6px 6px;
-  background-color: #3b3b65;
-  border: 1px solid #90909b;
+  padding: 6px 0 6px 8px;
+  border: 1px solid #ef4f3a;
   border-radius: 3px;
   transition: all 0.2s ease;
   text-decoration: none;
 }
-body .container .wrapper .footer_container .link_box a.link_pagination:active span.next {
-  color: #ef4f3a;
-  padding-left: 0;
+body .container .wrapper .footer_container .link_box a.link_pagination_next:active span.arrow_rigth {
+  color: snow;
+  margin-left: 0;
   /* Дополнительный отступ для стрелки */
 }
-body .container .wrapper .footer_container .link_box span.next {
+body .container .wrapper .footer_container .link_box span.arrow_rigth {
   transition: all 0.3s ease;
 }

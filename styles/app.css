@@ -16,36 +16,42 @@ body .footer_container .link_box {
   display: flex;
   justify-content: center;
 }
-body .footer_container .link_box a.link_pagination {
+body .footer_container .link_box a.link_pagination_prev {
+  width: 112px;
   color: snow;
   font-size: 18px;
-  padding: 6px 8px 6px 8px;
-  background-color: #56567d;
+  padding: 6px 8px 6px 0;
   border: 1px solid #90909b;
   border-radius: 3px;
   transition: all 0.3s ease 0.3s;
   text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
 }
-body .footer_container .link_box a.link_pagination:hover span.prev {
+body .footer_container .link_box a.link_pagination_prev span.arrow_left {
+  font-size: 17px;
+  color: snow;
+  margin-right: 5px;
+}
+body .footer_container .link_box a.link_pagination_prev:hover span.arrow_left {
   color: #ef4f3a;
-  padding-left: 6px;
+  padding-right: 6px;
   /* Дополнительный отступ для стрелки */
 }
-body .footer_container .link_box a.link_pagination:active {
-  color: #ef4f3a;
+body .footer_container .link_box a.link_pagination_prev:active {
+  color: snow;
   font-size: 18px;
-  padding: 6px 6px 6px 6px;
-  background-color: #3b3b65;
-  border: 1px solid #90909b;
+  padding: 6px 8px 6px 0;
+  border: 1px solid #ef4f3a;
   border-radius: 3px;
   transition: all 0.2s ease;
   text-decoration: none;
 }
-body .footer_container .link_box a.link_pagination:active span.prev {
-  color: #ef4f3a;
+body .footer_container .link_box a.link_pagination_prev:active span.arrow_left {
+  color: snow;
   padding-left: 0;
   /* Дополнительный отступ для стрелки */
 }
-body .footer_container .link_box span.prev {
+body .footer_container .link_box span.arrow_left {
   transition: all 0.3s ease;
 }
