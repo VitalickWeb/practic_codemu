@@ -8,6 +8,12 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+body .main_title_container {
+  text-align: center;
+}
+body .container_subtitle {
+  text-align: center;
+}
 body .footer_container {
   padding-top: 40px;
   margin-bottom: 40px;

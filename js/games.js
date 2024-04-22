@@ -10,11 +10,11 @@ const guessTheNumber = (function() {
 
     function init(containerSelector) {
         const container = document.querySelector(containerSelector)
-        const get_value = container.querySelector('.input_style')
-        const enter_value = container.querySelector('.btn_enter')
-        const clear_value = container.querySelector('.btn_clear')
-        const show_result = container.querySelector('.show_result_guesse')
-        const entered_numbers = container.querySelector('.show_entered_numbers')
+        const getValue = container.querySelector('.input_style')
+        const enterValue = container.querySelector('.btn_enter')
+        const clearValue = container.querySelector('.btn_clear')
+        const showResult = container.querySelector('.show_result_guesse')
+        const enteredNumbers = container.querySelector('.show_entered_numbers')
 
         function randomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min
@@ -28,20 +28,20 @@ const guessTheNumber = (function() {
             if (value < guesse) {
                 enteredNums.push(value)
                 attempt -= 1
-                return show_result.innerText = `Не добор, нужно чуток потрудится, давай поднажми!`
+                return showResult.innerText = `Не добор, нужно чуток потрудится, давай поднажми!`
             } else if (value > guesse) {
                 enteredNums.push(value)
                 attempt -= 1
-                return show_result.innerText = `Перебор! Отгребай скорее!`
+                return showResult.innerText = `Перебор! Отгребай скорее!`
             } else {
-                return show_result.innerText = `Неожиданно конечно, но вы победили, хотя ни чего не выиграли!)`
+                return showResult.innerText = `Неожиданно конечно, но вы победили, хотя ни чего не выиграли!)`
             }
         }
         
         function attemptGuesse(attempt) {
             if (attempt === 0) {
-                get_value.disabled = true
-                return show_result.innerText = `Ну ты прям победитель по жизни. Нет, ты продул ИИ!)`
+                getValue.disabled = true
+                return showResult.innerText = `Ну ты прям победитель по жизни. Нет, ты продул ИИ!)`
             }
         }
 
@@ -51,35 +51,35 @@ const guessTheNumber = (function() {
         
         function deleteValue(value, guesse) {
             if (value === guesse || value > guesse || value < guesse) {
-                return get_value.value = ''
+                return getValue.value = ''
             }
         }
 
         function enterNumber() {    
-            if (get_value.value !== '' && +get_value.value >= 1 && +get_value.value <= 10) {
-                checkGuess(+get_value.value, guesse)
-                deleteValue(+get_value.value, guesse)
+            if (getValue.value !== '' && +getValue.value >= 1 && +getValue.value <= 10) {
+                checkGuess(+getValue.value, guesse)
+                deleteValue(+getValue.value, guesse)
                 attemptGuesse(attempt)
-                entered_numbers.innerText = showEnteredNumbers()
+                enteredNumbers.innerText = showEnteredNumbers()
             } else {
                 alert("Введите корректное значение от 1 до 10!")
             }    
         }   
         
         function updateAll() {
-            get_value.value = ''
-            enter_value.value = ''
-            clear_value.value = ''
-            show_result.innerText = ''
-            entered_numbers.innerText = ''
-            get_value.disabled = false
+            getValue.value = ''
+            enterValue.value = ''
+            clearValue.value = ''
+            showResult.innerText = ''
+            enteredNumbers.innerText = ''
+            getValue.disabled = false
             guesse = randomInt(1, 10)
             attempt = 3
             enteredNums.length = 0;
         }
 
-        enter_value.addEventListener('click', enterNumber)
-        clear_value.addEventListener('click', updateAll)
+        enterValue.addEventListener('click', enterNumber)
+        clearValue.addEventListener('click', updateAll)
     }
 
     return {
