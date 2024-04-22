@@ -8,11 +8,46 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
-body .main_title_container {
+body .container_app {
+  width: 100%;
+}
+body .container_app .wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+body .container_app .wrapper .main_title_container {
   text-align: center;
 }
-body .container_subtitle {
+body .container_app .wrapper .container_subtitle {
   text-align: center;
+}
+body .container_app .wrapper .project_app_screen_keybord {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box {
+  width: 60%;
+  min-height: 250px;
+  background-color: #3b3b65;
+  border-radius: 5px;
+}
+body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .input_box {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .input_box input {
+  border: 1px solid #ccc;
+  width: 94%;
+  min-height: 220px;
+  font-size: 16px;
+  border-radius: 3px;
+  outline: none;
+}
+body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .input_box input .input_style {
+  color: #333;
 }
 body .footer_container {
   padding-top: 40px;
