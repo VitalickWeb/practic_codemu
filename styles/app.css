@@ -24,12 +24,13 @@ body .container_app .wrapper .container_subtitle {
 body .container_app .wrapper .project_app_screen_keybord {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box {
   width: 60%;
   min-height: 250px;
-  background-color: #3b3b65;
+  background-color: #dae2e8;
   border-radius: 5px;
 }
 body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .input_box {
@@ -48,6 +49,44 @@ body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box
 }
 body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .input_box input .input_style {
   color: #333;
+}
+body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .keybord_box {
+  width: 60%;
+  background-color: #dae2e8;
+  /* Цвет фона контейнера экранной клавиатуры */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+body .container_app .wrapper .type_fastening_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+body .container_app .wrapper .type_fastening_box .fastening_1 {
+  width: 40px;
+  height: 3px;
+  background-color: #9da3a7;
+}
+body .container_app .wrapper .type_fastening_box .fastening_2 {
+  width: 40px;
+  height: 3px;
+  background-color: #9da3a7;
+}
+body .container_app .wrapper .app_keybord_box {
+  width: 60%;
+  min-height: 250px;
+  background-color: #dae2e8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container_app .wrapper .app_keybord_box .keybord_box {
+  background-color: #727e87;
+  border: 1px solid #ccc;
+  width: 94%;
+  min-height: 220px;
+  border-radius: 3px;
 }
 body .footer_container {
   padding-top: 40px;
