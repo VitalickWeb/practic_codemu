@@ -2,31 +2,37 @@
 
 const screenKeybord = (function() {
 
-    function init(containerInit) {
-        const container = document.querySelector(containerInit)
+    function init(containerSelector) {
+        const container = document.querySelector(containerSelector)
         const tableKeyboard = container.querySelector('.buttons_keybord')
         
-        const alphabetLowerCase = [
+        const keyboardSymbols = [
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-          ];
-
-        const alphabetUpperCase = [
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+            '`', '-', '=', '[', ']', '\\', ';', '\'', ',', '[ space ]','.', '/', '⇪'
         ];
 
-        function interruptsAlphabet(alphabetLow, alphabetUp) {
+        function interruptsAlphabet(keyboardSymbols) {
 
-            for (let elem of alphabetLow) {
+            for (let i = 0; i < 1; i++) {
                 let rows = document.createElement('tr')
-                console.log(elem)
+                
+                for (let cell of keyboardSymbols) {
+                    let cells = document.createElement('td')
+                    cells.innerText = cell
+
+                    rows.append(cells)
+                }
 
                 tableKeyboard.append(rows)
             }
+
+            return 
         }
 
-        interruptsAlphabet(alphabetLowerCase, alphabetUpperCase)
+        interruptsAlphabet(keyboardSymbols)
 
 
 
@@ -37,6 +43,6 @@ const screenKeybord = (function() {
     return {
         init
     }
-})('project_app_screen_keybord')
+})('.project_app_screen_keybord')
 
-screenKeybord.init('project_app_screen_keybord')
+screenKeybord.init('.project_app_screen_keybord')

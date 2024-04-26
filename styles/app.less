@@ -29,11 +29,10 @@ body {
                 align-items: center;
 
                 .app_screen_keybord_box {
-                    width: 60%;
+                    width: 460px;
                     min-height: 250px;                
                     background-color: #dae2e8;
                     border-radius: 5px;
-
 
                     .input_box {
                         min-height: inherit;
@@ -56,7 +55,7 @@ body {
                     }
 
                     .keybord_box {
-                        width: 60%;
+                        width: 460px;
                         background-color: #dae2e8; /* Цвет фона контейнера экранной клавиатуры */
                         border-radius: 10px;
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -65,9 +64,9 @@ body {
             }
 
             .type_fastening_box {
-                width: 100%;
+                width: 350px;
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-between;
 
                 .fastening_1 {
                     width: 40px;
@@ -82,7 +81,7 @@ body {
             }
 
             .app_keybord_box {
-                width: 60%;
+                width: 460px;
                 min-height: 250px;                
                 background-color: #dae2e8;
                 border-radius: 5px;
@@ -94,9 +93,31 @@ body {
                 .keybord_box {
                     background-color: #727e87;
                     border: 1px solid #ccc;
-                    width: 94%;
-                    min-height: 220px;
+                    max-width: 416px;
+                    max-height: 220px;
                     border-radius: 3px;
+                    box-sizing: border-box;                 
+
+                    .buttons_keybord {
+
+                        tr {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            td {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;                           
+                                margin: 1px;
+                                border-radius: 2px;
+                                min-width: 26px;
+                                height: 26px;
+                                border: 1px solid #ccc;
+                                background-color: rgb(154, 178, 186);
+                                cursor: pointer;                                 
+                            }
+                        }
+                    }
                 }              
             }
 

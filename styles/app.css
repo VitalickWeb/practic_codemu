@@ -28,7 +28,7 @@ body .container_app .wrapper .project_app_screen_keybord {
   align-items: center;
 }
 body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box {
-  width: 60%;
+  width: 460px;
   min-height: 250px;
   background-color: #dae2e8;
   border-radius: 5px;
@@ -51,16 +51,16 @@ body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box
   color: #333;
 }
 body .container_app .wrapper .project_app_screen_keybord .app_screen_keybord_box .keybord_box {
-  width: 60%;
+  width: 460px;
   background-color: #dae2e8;
   /* Цвет фона контейнера экранной клавиатуры */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 body .container_app .wrapper .type_fastening_box {
-  width: 100%;
+  width: 350px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 body .container_app .wrapper .type_fastening_box .fastening_1 {
   width: 40px;
@@ -73,7 +73,7 @@ body .container_app .wrapper .type_fastening_box .fastening_2 {
   background-color: #9da3a7;
 }
 body .container_app .wrapper .app_keybord_box {
-  width: 60%;
+  width: 460px;
   min-height: 250px;
   background-color: #dae2e8;
   border-radius: 5px;
@@ -84,9 +84,27 @@ body .container_app .wrapper .app_keybord_box {
 body .container_app .wrapper .app_keybord_box .keybord_box {
   background-color: #727e87;
   border: 1px solid #ccc;
-  width: 94%;
-  min-height: 220px;
+  max-width: 416px;
+  max-height: 220px;
   border-radius: 3px;
+  box-sizing: border-box;
+}
+body .container_app .wrapper .app_keybord_box .keybord_box .buttons_keybord tr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .container_app .wrapper .app_keybord_box .keybord_box .buttons_keybord tr td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  border-radius: 2px;
+  min-width: 26px;
+  height: 26px;
+  border: 1px solid #ccc;
+  background-color: #9ab2ba;
+  cursor: pointer;
 }
 body .footer_container {
   padding-top: 40px;
